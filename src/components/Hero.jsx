@@ -24,17 +24,16 @@ const Hero = () => {
     while (base64Result.length < 6) {
       base64Result += "=";
     }
-
     let sURL = base64Result.slice(0, 6);
 
-    let finalshortenedUrl = "http://192.168.1.77:5173/" + sURL;
+    let finalshortenedUrl = "http://192.168.1.253:5173/" + sURL;
     setShortenedUrl(finalshortenedUrl);
     console.log("Shortened URL:", finalshortenedUrl);
   };
 
   const saveToDatabase = async () => {
     console.log("Saving to database...");
-    axios.post("http://192.168.1.77:8000/shortenedURLs", {
+    axios.post("http://192.168.1.253:8000/shortenedURLs", {
       URL: newUrl,
       shortenedURL: shortenedUrl,
     });

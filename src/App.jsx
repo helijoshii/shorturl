@@ -6,7 +6,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [urls, setUrls] = useState([]);
   useEffect(() => {
-    axios.get("http://192.168.1.77:8000/shortenedURLs").then((response) => {
+    axios.get("http://192.168.1.253:8000/shortenedURLs").then((response) => {
       console.log(response.data);
       if (window.location.pathname.length > 1) {
         console.log("Redirecting...");
